@@ -21,18 +21,24 @@ var Walker = function()
 
 Walker.prototype.display = function()
 {
-    point_color = color(random(255),random(255),random(255));//,0.5);
+    point_color = color(random(255),random(255),random(255),100);//,0.5);
     stroke(point_color);
     strokeWeight(4);
     point(this.x,this.y);
 };
 Walker.prototype.walk = function()
 {
+    /*
     var choice = floor(random(4));
     if(choice === 0) this.x+=4;
     else if(choice === 1) this.x-=4;
     else if(choice === 2) this.y+=4;
     else if(choice === 3) this.y-=4;
+    */
+    var stepx = random(-1, 1);
+    var stepy = random(-1, 1);
+    this.x += 4*stepx;
+    this.y += 4*stepy;
     point(this.x,this.y);
 };
 
